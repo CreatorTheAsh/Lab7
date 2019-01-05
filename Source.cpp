@@ -29,16 +29,20 @@ int main() {
 	for (int p = 0; p < n;p++) {
 		B[p] = rand();
 	}
-		for (int i = 3; i <= n; i++) {
-		k = Dif(B[i], B[i + 1]);
-		l = Dif(B[i+1], B[i + 2]);
-		max = Bigger(k, l);
-		min = Smaller(k, l);
-		if (MAX < max) { MAX = max; }
-		if (MIN < min) { MiN = min; }
-	}
+	if (n >= 3) {
+		for (int i = 0; i <= n; i++) {
+			k = Dif(B[i], B[i + 1]);
+			l = Dif(B[i+1], B[i + 2]);
+			max = Bigger(k, l);
+			min = Smaller(k, l);
+			if (MAX < max) { MAX = max; }
+			if (MIN < min) { MiN = min; }
+		}
 		cout << "MAX: " << MAX << "\n";
 		cout << "MIN: " << MIN << "\n";
-		system("pause");
-		return 0;
+	}
+	else { cout << "not enough array elements\n"; }
+	
+	system("pause");
+	return 0;
 }
